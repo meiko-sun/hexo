@@ -3,23 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>关于 | 骚花的个人博客</title>
+  <title>springboot 2.0 actuator之初识(一) | 骚花的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="keywords" content="actuator" />
   
   
   
-  <meta name="description" content="骚气的我1234567Person my = My.builder()    .setName(&quot;Defa Sun&quot;)    .setAge(24)    .whetherSingle(false)    .place(shanghai)    .build;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+  
+  <meta name="description" content="–STEP ONE–如何使用actuator  开启actuator功能,只需在pom.xml文件中加入依赖; 123456&amp;lt;dependencies&amp;gt;    &amp;lt;dependency&amp;gt;        &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;        &amp;lt;artifactId&amp;gt;spring-">
+<meta name="keywords" content="actuator">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot 2.0 Actuator之初识(一)">
+<meta property="og:url" content="http://yoursite.com/2018/09/28/Actuator/index.html">
 <meta property="og:site_name" content="骚花的个人博客">
-<meta property="og:description" content="骚气的我1234567Person my = My.builder()    .setName(&quot;Defa Sun&quot;)    .setAge(24)    .whetherSingle(false)    .place(shanghai)    .build;">
+<meta property="og:description" content="–STEP ONE–如何使用actuator  开启actuator功能,只需在pom.xml文件中加入依赖; 123456&amp;lt;dependencies&amp;gt;    &amp;lt;dependency&amp;gt;        &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;        &amp;lt;artifactId&amp;gt;spring-">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-26T09:43:47.106Z">
+<meta property="og:updated_time" content="2018-09-30T08:50:00.455Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="骚气的我1234567Person my = My.builder()    .setName(&quot;Defa Sun&quot;)    .setAge(24)    .whetherSingle(false)    .place(shanghai)    .build;">
+<meta name="twitter:title" content="SpringBoot 2.0 Actuator之初识(一)">
+<meta name="twitter:description" content="–STEP ONE–如何使用actuator  开启actuator功能,只需在pom.xml文件中加入依赖; 123456&amp;lt;dependencies&amp;gt;    &amp;lt;dependency&amp;gt;        &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;        &amp;lt;artifactId&amp;gt;spring-">
   
     <link rel="alternate" href="/atom.xml" title="骚花的个人博客" type="application/atom+xml">
   
@@ -58,8 +61,6 @@
   
 
   
-    <link rel="stylesheet" href="/css/archive.css" >
-  
   
   
 
@@ -67,7 +68,7 @@
 
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
   
@@ -90,7 +91,7 @@
             
               <a class="brand" style="
                  margin-top: 0px;"  
-                 >
+                href="#" data-toggle="modal" data-target="#myModal" >
                   <img width="142px" height="142px" alt="Hike News" src="/css/images/mylogo.jpg">
               </a>
             
@@ -155,86 +156,11 @@
 
 
 
-  
-    <section class="awSlider">
-      <div class="carousel slide carousel-fade " data-ride="carousel">
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-           
-              
-                <div class="item active" style="max-height:600px; overflow: hidden;">
-              
-                <img id="carousel-img0" src="/css/images/1.jpg">
-              </div>
-
-              <!-- 自适应大图 -->
-              <script>
-              	  var carouselResize = function() {
-              	  	  var h = document.body.clientHeight / 3;
-	                  var img0 = new Image();
-	                  var imageTag0 = document.getElementById("carousel-img0");
-	                  img0.src = imageTag0.src;
-	                  img0.onload=function(){
-	                    if (img0.width / img0.height <= document.body.clientWidth / h) {
-	                      imageTag0.style.width = document.body.clientWidth + "px";
-	                    } else {
-	                      imageTag0.style.height = h + "px";
-	                      imageTag0.style.marginLeft = -(h * img0.width / img0.height - document.body.clientWidth) / 2 + "px";
-	                    }
-	                  };
-              	  };
-                  carouselResize();
-              </script>
-            
-              
-                <div class="item" style="max-height:600px; overflow: hidden;">
-              
-                <img id="carousel-img1" src="/css/images/2.jpg">
-              </div>
-
-              <!-- 自适应大图 -->
-              <script>
-              	  var carouselResize = function() {
-              	  	  var h = document.body.clientHeight / 3;
-	                  var img1 = new Image();
-	                  var imageTag1 = document.getElementById("carousel-img1");
-	                  img1.src = imageTag1.src;
-	                  img1.onload=function(){
-	                    if (img1.width / img1.height <= document.body.clientWidth / h) {
-	                      imageTag1.style.width = document.body.clientWidth + "px";
-	                    } else {
-	                      imageTag1.style.height = h + "px";
-	                      imageTag1.style.marginLeft = -(h * img1.width / img1.height - document.body.clientWidth) / 2 + "px";
-	                    }
-	                  };
-              	  };
-                  carouselResize();
-              </script>
-            
-        </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href=".carousel" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Geri</span>
-        </a>
-        <a class="right carousel-control" href=".carousel" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">İleri</span>
-        </a>
-      </div>
-    </section>
-    
-  
-
-
-
       
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="about-"  class="article article-type-about" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-Actuator" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -242,7 +168,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      about
+      SpringBoot 2.0 Actuator之初识(一)
     </h1>
   
 
@@ -250,12 +176,152 @@
     
     <div class="article-meta">
       
+	<a href="/2018/09/28/Actuator/" class="article-date">
+	  <time datetime="2018-09-28T12:12:04.000Z" itemprop="datePublished">2018-09-28</time>
+	</a>
+
       
+    <a class="article-category-link" href="/categories/SpringBoot/">SpringBoot</a>
+
       
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="骚气的我"><a href="#骚气的我" class="headerlink" title="骚气的我"></a>骚气的我</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Person my = My.builder()</span><br><span class="line">    .setName(<span class="string">"Defa Sun"</span>)</span><br><span class="line">    .setAge(<span class="number">24</span>)</span><br><span class="line">    .whetherSingle(<span class="keyword">false</span>)</span><br><span class="line">    .place(shanghai)</span><br><span class="line">    .build;</span><br></pre></td></tr></table></figure>
+        <h5 id="–STEP-ONE–"><a href="#–STEP-ONE–" class="headerlink" title="–STEP ONE–"></a>–STEP ONE–</h5><pre><code>如何使用actuator
+
+开启actuator功能,只需在pom.xml文件中加入依赖;
+</code></pre><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="–STEP-TWO–"><a href="#–STEP-TWO–" class="headerlink" title="–STEP TWO–"></a>–STEP TWO–</h5><p><em>Endpoints：端点</em><br>可以用来监控应用以及应用进行交互，SpringBoot包含了很多内置的端点,当然也可以进行自己添加端点。并且每个端点都可控制。</p>
+<blockquote>
+<p>注意点：</p>
+<blockquote>
+<p>Spring Boot 2.0端点基础路径<code>&quot;/&quot;</code>调整为<code>&quot;/actuator&quot;</code>下面</p>
+<blockquote>
+<p>想要调整为1.0的配置需添加配置<code>management.endpoints.web.base-path=/</code></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>下面的端点都可用</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">endpoints</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">默认启用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">auditevents</td>
+<td style="text-align:center">显示当前应用程序的审计事件信息</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:left">beans</td>
+<td style="text-align:center">显示一个应用中所有<em>Spring Beans</em>的完整列表</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:left">conditions</td>
+<td style="text-align:center">显示配置类和自动配置类 <em>(configuration and auto-configuration classes)</em> 的状态及它们被应用或未被应用的原因</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:left">configprops</td>
+<td style="text-align:center">显示一个所有 <em>@ConfigurationProperties</em> 的集合列表</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:left">env</td>
+<td style="text-align:center">显示来自Spring的 <em>ConfigurableEnvironment</em>的属性</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:left">flyway</td>
+<td style="text-align:center">显示数据库迁移路径，如果有的话</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:left">health</td>
+<td style="text-align:center">显示应用的健康信息（当使用一个未认证连接访问时显示一个简单的’status’，使用认证连接访问则显示全部信息详情）</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:left">info</td>
+<td style="text-align:center">显示任意的应用信息</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:left">liquibase</td>
+<td style="text-align:center">展示任何Liquibase数据库迁移路径，如果有的话</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:left">metrics</td>
+<td style="text-align:center">展示当前应用的metrics信息</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:left">mappings</td>
+<td style="text-align:center">显示一个所有 <em>@RequestMapping</em> 路径的集合列表</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:left">scheduledtasks</td>
+<td style="text-align:center">显示应用程序中的计划任务</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:left">sessions</td>
+<td style="text-align:center">允许从Spring会话支持的会话存储中检索和删除(retrieval and deletion)用户会话。使用Spring Session对反应性Web应用程序的支持时不可用。</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:left">shutdown</td>
+<td style="text-align:center">允许应用以优雅的方式关闭（默认情况下不启用）</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:left">threaddump</td>
+<td style="text-align:center">执行一个线程dump</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:left">heapdump</td>
+<td style="text-align:center">返回一个GZip压缩的hprof堆dump文件</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:left">jolokia</td>
+<td style="text-align:center">返回一个GZip压缩的hprof堆dump文件</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:left">logfile</td>
+<td style="text-align:center">返回日志文件内容（如果设置了logging.file或logging.path属性的话），支持使用HTTP Range头接收日志文件内容的部分信息</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:left">prometheus</td>
+<td style="text-align:center">以可以被Prometheus服务器抓取的格式显示metrics信息</td>
+<td style="text-align:center">是</td>
+</tr>
+</tbody>
+</table>
+<p><em>heapdump</em>,<em>jolokia</em>,<em>logfile</em>,<em>prometheus</em> 四个endpoints在WEB应用才能够使用</p>
+<blockquote>
+<p>注意: </p>
+<blockquote>
+<p>Spring Boot 2.0的端点和之前的版本有较大不同,使用时需注意<br>另外,端点的监控机制也有很大不同,启用了不代表可以直接访问,还需要将其暴露出来,传统的management.security管理已被标记为不推荐,现在一般使用单独启用并暴露</p>
+</blockquote>
+</blockquote>
+
       
     </div>
     <footer class="article-footer">
@@ -268,7 +334,7 @@
           </li>
           <li class="post-copyright-link">
           <strong>本文链接:  </strong>
-          <a href="/about/index.html" target="_blank" title="about">http://yoursite.com/about/index.html</a>
+          <a href="/2018/09/28/Actuator/" target="_blank" title="SpringBoot 2.0 Actuator之初识(一)">http://yoursite.com/2018/09/28/Actuator/</a>
           </li>
           <li class="post-copyright-license">
             <strong>版权声明:   </strong>
@@ -312,10 +378,38 @@
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2018/09/30/Actuator╢■/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          SpringBoot 2.0 Actuator之初识(二)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/26/╫╘╜иss╖■╬ё╞ў╜╠│╠/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">自建ss服务器教程</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
 <!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#–STEP-ONE–"><span class="nav-number">1.</span> <span class="nav-text">–STEP ONE–</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#–STEP-TWO–"><span class="nav-number">2.</span> <span class="nav-text">–STEP TWO–</span></a></li></ol>
+    
+    </div>
+  </aside>
 
 </section>
         
@@ -413,6 +507,8 @@
 
 
 
+  <script src="/js/dialog.js"></script>
+
 
 
 
@@ -496,6 +592,8 @@
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
 </body>
 </html>

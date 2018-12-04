@@ -237,7 +237,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-自建ss服务器教程"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-╕∙╦╤╦ў"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -245,7 +245,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2018/09/26/自建ss服务器教程/">自建ss服务器教程</a>
+      <a class="article-title" href="/2018/12/05/╕∙╦╤╦ў/">GC root根搜索</a>
     </h1>
   
 
@@ -253,21 +253,25 @@
     
     <div class="article-meta">
       
-	<a href="/2018/09/26/自建ss服务器教程/" class="article-date">
-	  <time datetime="2018-09-26T15:32:33.000Z" itemprop="datePublished">2018-09-26</time>
+	<a href="/2018/12/05/╕∙╦╤╦ў/" class="article-date">
+	  <time datetime="2018-12-04T17:49:55.000Z" itemprop="datePublished">2018-12-04</time>
 	</a>
 
       
+    <a class="article-category-link" href="/categories/GC/">GC</a>
+
       
     </div>
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          ShadowsocksR一键部署管理脚本12yum -y install wgetwget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh &amp;&amp; chmod +x ssr.sh &amp;&amp; bash ssr.sh
-备用脚本：12yum -y install wgetwget -N --no-check-certificate ht...
+          JVM会采用一种算法来进行GC回收，即根搜索算法。它的处理方式就是，设立若干种根对象，当任何一个根对象到某一个对象均不可达时，则认为这个对象是可以被回收的
+
+说到GC roots（GC根），在JAVA语言中，可以当做GC roots的对象有以下几种：就拿上图来说，ObjectD和ObjectE是互相关联的，但是由于GC roots到这两个对象不可达，所以最终D和E还是会被当做GC的对象，上图若是采用引用计数法，则A-E五个对象都不会被回收。
+1. 虚拟机栈中(Java方法执行的内存模型：每...
         </p>
         <p class="article-more-link">
-          <a href="/2018/09/26/自建ss服务器教程/#more">阅读全文</a>
+          <a href="/2018/12/05/╕∙╦╤╦ў/#more">阅读全文</a>
         </p>
       
     </div>
@@ -286,7 +290,7 @@
 
 
   
-    <article id="post-hello-world"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-└м╗°╗╪╩╒╓о╥¤╙├╝╞╩¤╖и"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -294,7 +298,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2018/09/26/hello-world/">Hello World</a>
+      <a class="article-title" href="/2018/12/05/└м╗°╗╪╩╒╓о╥¤╙├╝╞╩¤╖и/">垃圾回收之引用计数法</a>
     </h1>
   
 
@@ -302,21 +306,419 @@
     
     <div class="article-meta">
       
-	<a href="/2018/09/26/hello-world/" class="article-date">
-	  <time datetime="2018-09-26T09:01:47.592Z" itemprop="datePublished">2018-09-26</time>
+	<a href="/2018/12/05/└м╗°╗╪╩╒╓о╥¤╙├╝╞╩¤╖и/" class="article-date">
+	  <time datetime="2018-12-04T17:31:58.000Z" itemprop="datePublished">2018-12-04</time>
 	</a>
 
       
+    <a class="article-category-link" href="/categories/GC/">GC</a>
+
       
     </div>
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post...
+          po引用计数法就是如果一个对象没有被任何引用指向(不可达)，则可视之为垃圾。这种方法的缺点就是不能检测到环的存在。
+首先需要声明，至少主流的Java虚拟机里面都没有选用引用计数算法来管理内存。 
+
+引用计数常用来说明垃圾收集的工作方式，但似乎从未被应用与任何一种Java虚拟机中实现
+
+《java编程思想》
+
+
+
+什么是引用计数算法：
+给对象中添加一个引用计数器，每当有一个地方引用它时,计数器值加1;当引用失效时,计数器值减1.任何时刻计数器值为0的对象就是不可能再被使用的。那为什么主流的J...
         </p>
         <p class="article-more-link">
-          <a href="/2018/09/26/hello-world/#more">阅读全文</a>
+          <a href="/2018/12/05/└м╗°╗╪╩╒╓о╥¤╙├╝╞╩¤╖и/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-authentication"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/12/01/authentication/">解决client does not support authentication</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/12/01/authentication/" class="article-date">
+	  <time datetime="2018-11-30T16:36:01.000Z" itemprop="datePublished">2018-11-30</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/MySql/">MySql</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          ####navicat 连接 mysql 出现Client does not support authentication protocol requested by server解决方案
+1windows
+
+首先进入MySql的安装目录打开cmd OR powershell 进入数据库
+
+1.\mysql -u root -p
+
+
+进入DB mysql
+
+1user mysql
+
+
+alter user
+
+1ALTER USER 'root'@'localhost' IDENTIFIED...
+        </p>
+        <p class="article-more-link">
+          <a href="/2018/12/01/authentication/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-SpringBoot╩╡╧╓╢п╠м┼ф╓├╢и╩▒╚╬╬ё"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/11/20/SpringBoot╩╡╧╓╢п╠м┼ф╓├╢и╩▒╚╬╬ё/">SpringBoot实现动态配置定时任务</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/11/20/SpringBoot╩╡╧╓╢п╠м┼ф╓├╢и╩▒╚╬╬ё/" class="article-date">
+	  <time datetime="2018-11-20T15:36:10.000Z" itemprop="datePublished">2018-11-20</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/SpringBoot/">SpringBoot</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          话不多说直接上代码
+首先配置SpringBoot的定时任务开启@EnableScheduling
+
+可以防止在启动类上面
+
+也可以放置在需要运行的task的类上面
+
+
+1. 首先定义动态的Task类。1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950import org.springframework.beans.factory.annotation.Auto...
+        </p>
+        <p class="article-more-link">
+          <a href="/2018/11/20/SpringBoot╩╡╧╓╢п╠м┼ф╓├╢и╩▒╚╬╬ё/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-╔ш╝╞─г╩╜╓о┤·└э─г╩╜"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/11/07/╔ш╝╞─г╩╜╓о┤·└э─г╩╜/">设计模式之代理模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/11/07/╔ш╝╞─г╩╜╓о┤·└э─г╩╜/" class="article-date">
+	  <time datetime="2018-11-07T13:37:57.000Z" itemprop="datePublished">2018-11-07</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/设计模式/">设计模式</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Java的三种代理模式
+
+静态代理  静态代理在使用时,需要定义接口或者父类,被代理对象与代理对象一起实现相同的接口或者是继承相同父类。  接口
+  1234public interface BookDao &#123;    void save();&#125;
+  目标对象
+  1234567public class BookDaoImpl implements BookDao &#123;    public void save() &#123;         System.out...
+        </p>
+        <p class="article-more-link">
+          <a href="/2018/11/07/╔ш╝╞─г╩╜╓о┤·└э─г╩╜/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-╔ш╝╞─г╩╜╓о╡е└¤─г╩╜"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/11/05/╔ш╝╞─г╩╜╓о╡е└¤─г╩╜/">设计模式之单例模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/11/05/╔ш╝╞─г╩╜╓о╡е└¤─г╩╜/" class="article-date">
+	  <time datetime="2018-11-05T09:55:42.000Z" itemprop="datePublished">2018-11-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/设计模式/">设计模式</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          单例模式的关键点12345671) 构造方法不对外开放,为private2) 确保单例类只有一个对象,尤其是多线程模式下3) 通过静态方法或枚举返回单例对象4) 确保单例类在反序列化是不会重新创建新的对象
+单例模式实现的五种方式：
+1.饿汉式 (声明的时候就初始化对象会浪费不必要的资源)
+1234567891011121314    public class Singleton &#123;    /*    * 饿汉式是在声明的时候就已经初始化Singleton,确保了对象的唯一性   ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2018/11/05/╔ш╝╞─г╩╜╓о╡е└¤─г╩╜/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Actuator╢■"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/09/30/Actuator╢■/">SpringBoot 2.0 Actuator之初识(二)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/09/30/Actuator╢■/" class="article-date">
+	  <time datetime="2018-09-30T12:12:04.000Z" itemprop="datePublished">2018-09-30</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/SpringBoot/">SpringBoot</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          –STEP THREE–启用端点默认情况下，除shutdown以外的所有端点均已启用。要配置单个端点的启用，请使用management.endpoint.&lt;id&gt;.enabled属性。以下示例启用shutdown端点：
+1management.endpoint.shutdown.enabled=true
+另外可以通过management.endpoints.enabled-by-default来修改全局端口默认配置,以下示例启用info端点并禁用所有其他端点：12managem...
+        </p>
+        <p class="article-more-link">
+          <a href="/2018/09/30/Actuator╢■/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Actuator"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/09/28/Actuator/">SpringBoot 2.0 Actuator之初识(一)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/09/28/Actuator/" class="article-date">
+	  <time datetime="2018-09-28T12:12:04.000Z" itemprop="datePublished">2018-09-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/SpringBoot/">SpringBoot</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          –STEP ONE–如何使用actuator
+
+开启actuator功能,只需在pom.xml文件中加入依赖;
+123456&lt;dependencies&gt;    &lt;dependency&gt;        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;        &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;    &lt...
+        </p>
+        <p class="article-more-link">
+          <a href="/2018/09/28/Actuator/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-╫╘╜иss╖■╬ё╞ў╜╠│╠"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/09/26/╫╘╜иss╖■╬ё╞ў╜╠│╠/">自建ss服务器教程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/09/26/╫╘╜иss╖■╬ё╞ў╜╠│╠/" class="article-date">
+	  <time datetime="2018-09-26T15:32:33.000Z" itemprop="datePublished">2018-09-26</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/日常/">日常</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          ShadowsocksR一键部署管理脚本12yum -y install wgetwget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh &amp;&amp; chmod +x ssr.sh &amp;&amp; bash ssr.sh
+备用脚本：12yum -y install wgetwget -N --no-check-certificate ht...
+        </p>
+        <p class="article-more-link">
+          <a href="/2018/09/26/╫╘╜иss╖■╬ё╞ў╜╠│╠/#more">阅读全文</a>
         </p>
       
     </div>

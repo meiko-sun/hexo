@@ -3,23 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hello world | 骚花的个人博客</title>
+  <title>springboot 2.0 actuator之初识(二) | 骚花的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="keywords" content="actuator" />
   
   
   
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  
+  <meta name="description" content="–STEP THREE–启用端点默认情况下，除shutdown以外的所有端点均已启用。要配置单个端点的启用，请使用management.endpoint.&amp;lt;id&amp;gt;.enabled属性。以下示例启用shutdown端点： 1management.endpoint.shutdown.enabled=true 另外可以通过management.endpoints.enabled-by-def">
+<meta name="keywords" content="actuator">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/09/26/hello-world/index.html">
+<meta property="og:title" content="SpringBoot 2.0 Actuator之初识(二)">
+<meta property="og:url" content="http://yoursite.com/2018/09/30/Actuator╢■/index.html">
 <meta property="og:site_name" content="骚花的个人博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="–STEP THREE–启用端点默认情况下，除shutdown以外的所有端点均已启用。要配置单个端点的启用，请使用management.endpoint.&amp;lt;id&amp;gt;.enabled属性。以下示例启用shutdown端点： 1management.endpoint.shutdown.enabled=true 另外可以通过management.endpoints.enabled-by-def">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-25T06:03:07.000Z">
+<meta property="og:updated_time" content="2018-11-28T12:57:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="SpringBoot 2.0 Actuator之初识(二)">
+<meta name="twitter:description" content="–STEP THREE–启用端点默认情况下，除shutdown以外的所有端点均已启用。要配置单个端点的启用，请使用management.endpoint.&amp;lt;id&amp;gt;.enabled属性。以下示例启用shutdown端点： 1management.endpoint.shutdown.enabled=true 另外可以通过management.endpoints.enabled-by-def">
   
     <link rel="alternate" href="/atom.xml" title="骚花的个人博客" type="application/atom+xml">
   
@@ -157,7 +160,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-hello-world" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-Actuator╢■" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -165,7 +168,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Hello World
+      SpringBoot 2.0 Actuator之初识(二)
     </h1>
   
 
@@ -173,11 +176,13 @@
     
     <div class="article-meta">
       
-	<a href="/2018/09/26/hello-world/" class="article-date">
-	  <time datetime="2018-09-26T09:01:47.592Z" itemprop="datePublished">2018-09-26</time>
+	<a href="/2018/09/30/Actuator╢■/" class="article-date">
+	  <time datetime="2018-09-30T12:12:04.000Z" itemprop="datePublished">2018-09-30</time>
 	</a>
 
       
+    <a class="article-category-link" href="/categories/SpringBoot/">SpringBoot</a>
+
       
 	<a class="article-views">
 	<span id="busuanzi_container_page_pv">
@@ -188,16 +193,46 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <h5 id="–STEP-THREE–"><a href="#–STEP-THREE–" class="headerlink" title="–STEP THREE–"></a>–STEP THREE–</h5><p>启用端点<br>默认情况下，除<code>shutdown</code>以外的所有端点均已启用。要配置单个端点的启用，请使用<code>management.endpoint.&lt;id&gt;.enabled</code>属性。以下示例启用shutdown端点：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">management.endpoint.shutdown.enabled=true</span><br></pre></td></tr></table></figure>
+<p>另外可以通过<code>management.endpoints.enabled-by-default</code>来修改全局端口默认配置,以下示例启用info端点并禁用所有其他端点：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">management.endpoints.enabled-by-default=false</span><br><span class="line">management.endpoint.info.enabled=true</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注意<br>禁用的端点将从应用程序上下文中完全删除。如果您只想更改端点公开(对外暴露)的技术，请改为使用<code>include</code>和<code>exclude</code>属性,详情见下文</p>
+</blockquote>
+<h5 id="–STEP-FOUR–"><a href="#–STEP-FOUR–" class="headerlink" title="–STEP FOUR–"></a>–STEP FOUR–</h5><p>暴露端点</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Property</th>
+<th style="text-align:center">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">management.endpoints.jmx.exposure.exclude</td>
+<td style="text-align:center">*</td>
+</tr>
+<tr>
+<td style="text-align:left">management.endpoints.jmx.exposure.include</td>
+<td style="text-align:center">*</td>
+</tr>
+<tr>
+<td style="text-align:left">management.endpoints.web.exposure.exclude</td>
+<td style="text-align:center">*</td>
+</tr>
+<tr>
+<td style="text-align:left">management.endpoints.web.exposure.include</td>
+<td style="text-align:center">info, health</td>
+</tr>
+</tbody>
+</table>
+<p>include属性列出了公开的端点的ID,exclude属性列出了不应该公开的端点的ID<br><code>exclude</code>属性优先于<code>include</code>属性。包含和排除属性都可以使用端点ID列表进行配置。</p>
+<blockquote>
+<p>注意<br>这里的优先级是指同一端点ID,同时出现在include属性表和exclude属性表里,exclude属性优先于include属性,即此端点没有暴露</p>
+</blockquote>
+<p>例如，要停止通过JMX公开所有端点并仅公开health和info端点，请使用以下属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">management.endpoints.jmx.exposure.include=health,info</span><br></pre></td></tr></table></figure></p>
+<p><code>*</code>可以用来选择所有端点。例如，要通过HTTP公开除env和beans端点之外的所有内容，请使用以下属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">management.endpoints.web.exposure.include=*</span><br><span class="line">management.endpoints.web.exposure.exclude=env,beans</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -210,7 +245,7 @@
           </li>
           <li class="post-copyright-link">
           <strong>本文链接:  </strong>
-          <a href="/2018/09/26/hello-world/" target="_blank" title="Hello World">http://yoursite.com/2018/09/26/hello-world/</a>
+          <a href="/2018/09/30/Actuator╢■/" target="_blank" title="SpringBoot 2.0 Actuator之初识(二)">http://yoursite.com/2018/09/30/Actuator╢■/</a>
           </li>
           <li class="post-copyright-license">
             <strong>版权声明:   </strong>
@@ -256,15 +291,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/09/26/自建ss服务器教程/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/11/05/╔ш╝╞─г╩╜╓о╡е└¤─г╩╜/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
-          自建ss服务器教程
+          设计模式之单例模式
         
       </div>
     </a>
   
+  
+    <a href="/2018/09/28/Actuator/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">SpringBoot 2.0 Actuator之初识(一)</div>
+    </a>
   
 </nav>
 
@@ -277,7 +317,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#–STEP-THREE–"><span class="nav-number">1.</span> <span class="nav-text">–STEP THREE–</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#–STEP-FOUR–"><span class="nav-number">2.</span> <span class="nav-text">–STEP FOUR–</span></a></li></ol>
     
     </div>
   </aside>
